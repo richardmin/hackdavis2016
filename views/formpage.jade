@@ -1,0 +1,184 @@
+extends layout
+
+block content
+  .row-about
+    .divider-title Submit a Proposal
+    .container
+      .row
+        h1 WANT TO START A SOLAR PROJECT IN YOUR COMMUNITY?
+        .div Is there a nonprofit organization or a cooperative in your community that you really care about? Would you like to see that organization save money on its electric bills and be a climate leader by going solar? If so, you can help make this happen!
+        .div &nbsp;
+        .div By filling out this application you are expressing interest in being the point person to lead a solar energy campaign for a community serving organization you care about. To get started, we’ll need some information about you and the organization you want to put solar on.
+        br
+        h2 Background
+        br
+        .div As you know, RE-volv finances solar energy projects for nonprofits and cooperatives that serve their community. RE-volv allows people like you to spearhead crowdfunding campaigns to cover the initial costs of a solar installation. (Translation: running an online fundraiser and collecting tax deductible donations.) As the nonprofit or co-op pays RE-volv back through a solar lease agreement over time, people who gave to the campaign will get to choose what solar projects to reinvest those funds into next! All of these projects contribute to the Solar Seed Fund, our revolving fund for solar energy!
+        br
+        h2 Benefits to Organization
+        .div 
+          ul(style='list-style-type:disc')
+            li(style='list-style-type:disc') Go solar for no up-front costs
+            li(style='list-style-type:disc') Save up to 15% or more on electric bills
+            li(style='list-style-type:disc') Power your facility with clean energy and reduce carbon emissions
+            li(style='list-style-type:disc') Be recognized as a leader in your community
+            li(style='list-style-type:disc') Give your friends the ability to support your organization’s commitment to solar energy
+        br
+        h2 About You
+
+        form(action='/submit',method='post')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='name') Name:
+                 input(id='name',type='text',value='',placeholder='Your Name',name='name')
+
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='email') Email:
+                 input(id='email',type='text',value='',placeholder='name@site.com',name='email')
+          
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='phone') Phone-Number: 
+                 input(id='phone',type='text',value='',placeholder='(___) ___-____',name='phone')
+
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='spearhead') Why are you personally interested in spearheading a solar project in your community?: 
+                 input(id='spearhead',type='text',value='',placeholder='Your Answer',name='spearhead')
+
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='experience') What experience do you have leading community-based projects?
+                 input(id='experience',type='text',value='',placeholder='Your Answer',name='experience')
+
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='affiliation') What is your affiliation to this organization?
+                 input(id='affiliation',type='text',value='',placeholder='Your Answer',name='affiliation')
+          
+          h2 About the Organization
+
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='org-name') Name:
+                 input(id='org-name',type='text',value='',placeholder='Organization Name',name='org-name')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              .div Is your solar project for a:
+              input(id='org-type',type='radio',value='501(c)(3) nonprofit organization',placeholder='',name='org-type')
+              |  
+              label(for='org-type') 501(c)(3) nonprofit organization
+              br
+              input(id='org-type2',type='radio',value='A legally recognized cooperative',placeholder='',name='org-type') 
+              |  
+              label(for='org-type2') A legally recognized cooperative
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='tax') Tax ID:
+                 input(id='tax',type='text',value='',placeholder='',name='tax')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='address') Address:
+                 input(id='address',type='text',value='',placeholder='',name='address')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='billing-address') Billing Address (if different):
+                 input(id='billing-address',type='text',value='',placeholder='',name='billing-address')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='website') Website:
+                 input(id='website',type='text',value='',placeholder='',name='website')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='business-phone') Phone number:
+                 input(id='business-phone',type='text',value='',placeholder='(___) ___-____',name='business-phone')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='mission') Mission Statement:
+                 input(id='mission',type='text',value='',placeholder='',name='mission')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='year') What year was the organization started?
+                 input(id='year',type='text',value='',placeholder='YYYY',name='year')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              .div Does the organization own its own building?
+              input(id='building1',type='radio',value='Yes',placeholder='',name='building')
+              |  
+              label(for='building1') Yes
+              br
+              input(id='building2',type='radio',value='No',placeholder='',name='building') 
+              |  
+              label(for='building2') No
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='length') How long has the organization been in its building?
+                 input(id='length',type='text',value='',placeholder='YYYY',name='length')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='people') How many people come through the doors of this facility every year?
+                 input(id='people',type='text',value='',placeholder='',name='people')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='demographic') What is the size and demographic of the population served?
+                 input(id='demographic',type='text',value='',placeholder='',name='demographic')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='roof-age') How old is the roof of the building?
+                 input(id='roof-age',type='text',value='',placeholder='',name='roof-age')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              .div Are there plans to replace the roof soon?
+              input(id='replace1',type='radio',value='Yes',placeholder='',name='replace')
+              |  
+              label(for='replace1') Yes
+              br
+              input(id='replace2',type='radio',value='No',placeholder='',name='replace') 
+              |  
+              label(for='replace2') No
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='electric') What electric utility provider serves the building?
+                 input(id='electric',type='text',value='',placeholder='',name='electric')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              .div  Has the organization implemented any energy efficiency improvements in the building?
+              input(id='efficiency1',type='radio',value='Yes',placeholder='',name='efficiency')
+              |  
+              label(for='efficiency1') Yes
+              br
+              input(id='efficiency2',type='radio',value='No',placeholder='',name='efficiency') 
+              |  
+              label(for='efficiency2') No
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='efficiency-implemented') If so, what?
+                 input(id='efficiency-implemented',type='text',value='',placeholder='',name='efficiency-implemented')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='why') Why are they interested in going solar?
+                 input(id='why',type='text',value='',placeholder='',name='why')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='process') Have they looked into solar before, and if so, where are they in the process?
+                 input(id='process',type='text',value='',placeholder='',name='process')
+          h2 Please be prepared to provide RE-volv with the following documents after submitting this application:
+          ul(style='list-style-type:disc')
+            li(style='list-style-type:disc') the organization’s Profit and Loss Statement and the Balance Sheet for each of the last three years
+            li(style='list-style-type:disc') scanned copies of the organization’s last 12 months of electricity bills
+          h2 THANK YOU FOR YOUR INTEREST IN CREATING SOLAR IN YOUR COMMUNITY!
+          div If you have any questions about this application, please contact us at info [at] re-volv [dot] org.
+          div We look forward to getting in touch with you soon!
+          br 
+          div(data-role='fieldcontain')   
+            input(type='submit',value='Sign Up',data-transition='fade', data-theme='c', class='btn btn-important')
+
+    .divider-title
+    script(type='text/javascript', src='/js/jquery.maskedinput.min.js')
+    script(type='text/javascript').
+      jQuery(function($){
+      $("#phone").mask("(999) 999-9999");
+      $("#business-phone").mask("(999) 999-9999");
+      $("#year").mask("9999");
+      $("#length").mask("9999");
+      });

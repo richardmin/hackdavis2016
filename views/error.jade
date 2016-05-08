@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .divider-title= error.status
+    .row-about
+      .about-inset
+        h1= message
+        h2= error.status
+        pre #{error.stack}
+  .divider-title
