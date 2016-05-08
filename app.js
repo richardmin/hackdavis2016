@@ -9,6 +9,7 @@ var Firebase = require("firebase");
 
 var routes = require('./routes/formpage');
 var submit = require('./routes/submit');
+// var sorted = require('./routes/viewsorted');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/bower_components',  express.static(path.join(__dirname, 'bower_compone
 
 app.use('/formpage', routes);
 app.use('/submit', submit);
+// app.use('/viewsorted', sorted)
 
 //static server
 app.use(express.static('static'));

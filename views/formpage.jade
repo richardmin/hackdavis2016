@@ -53,9 +53,24 @@ block content
 
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='affiliation') What is your affiliation to this organization?
-                 input(id='affiliation',type='text',value='',placeholder='Your Answer',name='affiliation')
-          
+              .div What is your affiliation to this organization?
+                 //- input(id='affiliation',type='text',value='',placeholder='Your Answer',name='affiliation')
+              input(id='affiliation1',type='radio',value='Worker',placeholder='',name='affiliation')
+              |  
+              label(for='affiliation1') Work for Organization
+              br
+              input(id='affiliation2',type='radio',value='Board',placeholder='',name='affiliation') 
+              |  
+              label(for='affiliation2') Board Member for Organization
+              br
+              input(id='affiliation3',type='radio',value='Volunteer',placeholder='',name='affiliation') 
+              |  
+              label(for='affiliation3') Volunteer for Organization
+              br
+              input(id='affiliation4',type='radio',value='Other',placeholder='',name='affiliation') 
+              |  
+              label(for='affiliation4') Other
+              div(data-role='fieldcontain')
           h2 About the Organization
 
           div(data-role='fieldcontain')
@@ -78,8 +93,64 @@ block content
                  input(id='tax',type='text',value='',placeholder='',name='tax')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='address') Address:
-                 input(id='address',type='text',value='',placeholder='',name='address')
+              label(for='address') Building Address:
+                input(id='address',type='text',value='',placeholder='',name='address')
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='state') State:
+                select(name='State')
+                  option(value='', selected='selected') Select a State
+                  option(value='AL') Alabama
+                  option(value='AK') Alaska
+                  option(value='AZ') Arizona
+                  option(value='AR') Arkansas
+                  option(value='CA') California
+                  option(value='CO') Colorado
+                  option(value='CT') Connecticut
+                  option(value='DE') Delaware
+                  option(value='DC') District Of Columbia
+                  option(value='FL') Florida
+                  option(value='GA') Georgia
+                  option(value='HI') Hawaii
+                  option(value='ID') Idaho
+                  option(value='IL') Illinois
+                  option(value='IN') Indiana
+                  option(value='IA') Iowa
+                  option(value='KS') Kansas
+                  option(value='KY') Kentucky
+                  option(value='LA') Louisiana
+                  option(value='ME') Maine
+                  option(value='MD') Maryland
+                  option(value='MA') Massachusetts
+                  option(value='MI') Michigan
+                  option(value='MN') Minnesota
+                  option(value='MS') Mississippi
+                  option(value='MO') Missouri
+                  option(value='MT') Montana
+                  option(value='NE') Nebraska
+                  option(value='NV') Nevada
+                  option(value='NH') New Hampshire
+                  option(value='NJ') New Jersey
+                  option(value='NM') New Mexico
+                  option(value='NY') New York
+                  option(value='NC') North Carolina
+                  option(value='ND') North Dakota
+                  option(value='OH') Ohio
+                  option(value='OK') Oklahoma
+                  option(value='OR') Oregon
+                  option(value='PA') Pennsylvania
+                  option(value='RI') Rhode Island
+                  option(value='SC') South Carolina
+                  option(value='SD') South Dakota
+                  option(value='TN') Tennessee
+                  option(value='TX') Texas
+                  option(value='UT') Utah
+                  option(value='VT') Vermont
+                  option(value='VA') Virginia
+                  option(value='WA') Washington
+                  option(value='WV') West Virginia
+                  option(value='WI') Wisconsin
+                  option(value='WY') Wyoming
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
               label(for='billing-address') Billing Address (if different):
@@ -98,7 +169,7 @@ block content
                  input(id='mission',type='text',value='',placeholder='',name='mission')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='year') What year was the organization started?
+              label(for='year') What year was the organization founded?
                  input(id='year',type='text',value='',placeholder='YYYY',name='year')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
@@ -112,19 +183,19 @@ block content
               label(for='building2') No
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='length') How long has the organization been in its building?
-                 input(id='length',type='text',value='',placeholder='YYYY',name='length')
+              label(for='length') How long has the organization been in this building?
+                 input(id='length',type='text',value='',placeholder='',name='length')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
               label(for='people') How many people come through the doors of this facility every year?
                  input(id='people',type='text',value='',placeholder='',name='people')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='demographic') What is the size and demographic of the population served?
+              label(for='demographic') What is the demographic of the population served?
                  input(id='demographic',type='text',value='',placeholder='',name='demographic')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='roof-age') How old is the roof of the building?
+              label(for='roof-age') How many years old is the roof of the building?
                  input(id='roof-age',type='text',value='',placeholder='',name='roof-age')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
@@ -156,11 +227,23 @@ block content
                  input(id='efficiency-implemented',type='text',value='',placeholder='',name='efficiency-implemented')
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='why') Why are they interested in going solar?
+              label(for='why') Why is the organization interested in going solar?
                  input(id='why',type='text',value='',placeholder='',name='why')
+
           div(data-role='fieldcontain')
             fieldset(data-role='controlgroup')
-              label(for='process') Have they looked into solar before, and if so, where are they in the process?
+              .div  Has the organization implemented any energy efficiency improvements in the building?
+              input(id='history1',type='radio',value='Yes',placeholder='',name='history')
+              |  
+              label(for='history1') Yes
+              br
+              input(id='history2',type='radio',value='No',placeholder='',name='history') 
+              |  
+              label(for='history2') No
+              
+          div(data-role='fieldcontain')
+            fieldset(data-role='controlgroup')
+              label(for='process') If so, where is it in the process?
                  input(id='process',type='text',value='',placeholder='',name='process')
           h2 Please be prepared to provide RE-volv with the following documents after submitting this application:
           ul(style='list-style-type:disc')
@@ -180,5 +263,7 @@ block content
       $("#phone").mask("(999) 999-9999");
       $("#business-phone").mask("(999) 999-9999");
       $("#year").mask("9999");
-      $("#length").mask("9999");
+      $("#roof-age").mask("9?9");
+      $("#length").mask("9?99");
+      $("#people").mask("9?9999999999");
       });
