@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var nib = require('nib');
-
+var Firebase = require("firebase");
 
 var routes = require('./routes/formpage');
 var submit = require('./routes/submit');
