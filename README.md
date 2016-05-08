@@ -10,7 +10,15 @@ After downloading this through either git or wget, cd into the folder and run
 #About
 Done for a hackdavis challenge by RE-VOLV
 
+This integrates the form and calculates a projected score for value of projects, and displays the projects in that order.
 
+The pages are loaded on:
+localhost:3000/formpage for the form
+localhost:3000/sorted for the sorted page.
+
+You can navigate through localhost:3000 to the formpage.
+
+The problem is as follows:
 - Problem #1: Project Rating Algorithm 
 
 In this survey, you can see the questions that we ask potential Solar Champions about themselves and the community they wish to put solar on. Could we:
