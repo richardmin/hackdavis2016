@@ -8,6 +8,8 @@ block content
         .row
           .panel.panel-default
             .panel-body
+              each val, key in json
+                p #{key}
               h4.text-primary Organization: Organization Name
               p
                 strong State:
