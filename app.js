@@ -9,7 +9,7 @@ var Firebase = require("firebase");
 
 var routes = require('./routes/formpage');
 var submit = require('./routes/submit');
-// var sorted = require('./routes/viewsorted');
+var sorted = require('./routes/sorted');
 
 var app = express();
 
@@ -26,6 +26,8 @@ app.use(stylus.middleware({
   }));
 
 // view engine setup
+app.locals.pretty = true;
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -40,7 +42,8 @@ app.use('/bower_components',  express.static(path.join(__dirname, 'bower_compone
 
 app.use('/formpage', routes);
 app.use('/submit', submit);
-// app.use('/viewsorted', sorted)
+app.use('/sorted', sorted)
+
 
 //static server
 app.use(express.static('static'));
@@ -53,6 +56,7 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
 
 // production error handler
 // no stacktraces leaked to user
