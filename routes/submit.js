@@ -27,6 +27,7 @@ function analyze(req)
 	if(req.State != "" && states.indexOf(req.State) > -1) //state is in one of those serviced by solarcity, sunrun, or sungetivity => means that it's probably cheap/money making
 		points += 50;
 	
+
 	if(req.affiliation == "Worker")
 	{
 		points += 10;
@@ -40,6 +41,7 @@ function analyze(req)
 		points += 3;
 	}
 
+	
 	if(req.people != "") //make sure there's a people count
 	{
 		var toAdd;
@@ -49,20 +51,22 @@ function analyze(req)
 			toAdd = req.people/1000; //otherewise we scale it down
 		if(toAdd > 30)
 			toAdd = 30;
-
+		console.log("toAdd: " + toAdd);
 		points += toAdd;
 	}
+	
 
 	if(req.building=="Yes") //own own building
 	{
 		points += 20;
 	}
 
-	if(req.roof-age > 10 && req.replace!="Yes")
+	if(req['roof-age'] > 10 && req.replace!="Yes")
 		points -= 300; //big problem
-
+	
 	if(req.length < 1)
 		points = null; //if you don't have it for a year, you need to come back later.
+
 
 	if(req.year != "")
 	{
@@ -85,12 +89,12 @@ router.post('/', function(req, res)
 {
 	var ref = 
 	res.render('submit', {title: 'Nom'});
-	// var points = analyze(req.body)
-	var myval = myFirebaseRef.push({data: req.body, 'points': 15, 'seen': false});
+	var points = analyze(req.body)
+	var myval = myFirebaseRef.push({data: req.body, 'points': points, 'seen': false});
 	
 	myval.update({ "data/startedAt": Firebase.ServerValue.TIMESTAMP}); //time since unix epoch
 	// myval.update({ "points" : points}); //time since unix epoch
-	// console.log(req.body);
+	console.log(req.body);
 	console.log(points);
 });
 
