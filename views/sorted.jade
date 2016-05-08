@@ -8,8 +8,8 @@ block content
         .row
           .panel.panel-default
             .panel-body
-            p= data
-            each val in data
+            //- p= data
+            each val, index in data
               h4.text-primary Organization: #{val['org-name']}
               p
                 strong State:
@@ -22,8 +22,24 @@ block content
                 |  #{val['building']}  &nbsp;
                 strong Organization Age:
                 |  #{2016-val['year']}
-              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#card1') More Details
-              #card1.collapse
+              p 
+                strong Volunteer Name:
+                |  #{val['name']} &nbsp;
+                strong Email:
+                |  #{val['email']} &nbsp;
+                strong Contact-Number:
+                |  #{val['phone']} &nbsp;
+              button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#card'+index) More Details
+
+              .collapse(id='card'+index)
+                br
+                h4 Volunteer Info
+                br
+                .div Interest: #{val.spearhead}
+                br
+                .div Experience: #{val.experience}
+                br
+                .div Role in Organization: #{val.affiliation}
                 br
                 h4 Organization Info
                 .div Organization Type: #{val['org-type']}
@@ -57,3 +73,6 @@ block content
                 .div Interest in Solar: #{val.why}
                 br
                 .div Looked at Solar Before: #{val.history}
+                br 
+
+              hr
