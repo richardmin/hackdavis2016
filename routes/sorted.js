@@ -15,7 +15,7 @@ function sortResults(obj, prop, asc) {
 router.get('/', function(req, res)
 {
 	
-	console.log("asdf");
+	
 	myFirebaseRef.orderByChild("points").once("value", function(snapshot) {
 	  // console.log("HOI IM TEM");
 	  // console.log(snapshot.val());
@@ -23,15 +23,15 @@ router.get('/', function(req, res)
 	  snapshot.forEach(function(snp) {
 	  	// console.log("nom");
 	  	// console.log(snp.val());
-	  	d = JSON.stringify(snp.key()) + ": " + JSON.stringify(snp.val()) + "," + d;
+	  	d = JSON.stringify(snp.val().data) + "," + d;
 	  });
-	  d = "{" + d
+	  d = "[" + d
 	  d = d.slice(0, -1);
-	  d = d + "}"
-	  console.log(d);
+	  d = d + "]"
+	  console.log(JSON.parse(d));
 
 	  res.render('sorted', {
-  	    data: d
+  	    data: JSON.parse(d)
   	  });
 	}, function (errorObject) {
 	  console.log("The read failed: " + errorObject.code);

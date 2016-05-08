@@ -8,50 +8,52 @@ block content
         .row
           .panel.panel-default
             .panel-body
-              each val, key in json
-                p #{key}
-              h4.text-primary Organization: Organization Name
+            p= data
+            each val in data
+              h4.text-primary Organization: #{val['org-name']}
               p
                 strong State:
-                |  CA &nbsp;
-                strong Roofed:
-                |  Yes  &nbsp;
+                |  #{val['State']} &nbsp;
+                strong Roof Age:
+                |  #{2016-val['roof-age']} &nbsp;
+                strong Roof Getting Replaced:
+                |  #{val['replace']} &nbsp;
                 strong Building Owners:
-                |  Yes  &nbsp;
-                strong Age:
-                |  15
+                |  #{val['building']}  &nbsp;
+                strong Organization Age:
+                |  #{2016-val['year']}
               button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#card1') More Details
               #card1.collapse
                 br
-                h6 Organization Info
-                .div Organization Type: 
+                h4 Organization Info
+                .div Organization Type: #{val['org-type']}
                 br
-                .div Website: 
+                .div Website: #{val['website']}
                 br
-                .div Tax ID: 
+                .div Tax ID: #{val['tax']}
                 br
-                .div Building Address:
+                .div Building Address: #{val['address']}
                 br
-                .div Billing Address:
+                .div Billing Address: #{val['billing-address']}
                 br
-                .div Phone-Number:
+                .div Phone-Number: #{val['business-phone']}
                 hr
-                .div Roof Age:
+                .div Roof Age: #{2016-val['roof-age']}
                 br
-                .div Replacing Roof Soon: 
+                .div Replacing Roof Soon: #{val['replace']}
                 br
-                .div Electricity Provider:
+                .div Electricity Provider: #{val['electric']}
                 hr
-                .div Energy Efficiency Upgrades: 
+                .div Energy Efficiency Upgrades: #{val['efficiency-implemented']}
                 hr
-                .div Time in building:
+                .div Years in building: #{val.length}
                 br
-                .div Annual People Through Doors:
+                .div Annual People Through Doors: #{val.people}
                 br
-                .div Demographics: 
+                .div Demographics: #{val.demographic}
                 hr
-                .div Mission Statement:
+                .div Mission Statement: #{val.mission}
                 br
-                .div Interest in Solar: 
+                .div Interest in Solar: #{val.why}
                 br
-                .div Looked at Solar Before:
+                .div Looked at Solar Before: #{val.history}
